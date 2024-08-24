@@ -1,7 +1,7 @@
 {
   "extends": "@tsconfig/node20/tsconfig.json",
   "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "Bundler",
-  },
+    "module": "es2015",
+    "moduleResolution": "NodeNext"
+  }
 }
