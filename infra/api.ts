@@ -2,6 +2,14 @@ import { table, secret } from "./storage";
 
 // Create the API
 export const api = new sst.aws.ApiGatewayV2("Api", {
+    domain:
+        $app.stage === "production"
+            ? {
+                  name: "api.notes.devonweller.com",
+                  dns: false,
+                  cert: "arn:aws:acm:us-east-1:568832430140:certificate/a3e4db58-7473-41f8-b2c3-a4cd9acd4b1b",
+              }
+            : undefined,
     transform: {
         route: {
             handler: {
